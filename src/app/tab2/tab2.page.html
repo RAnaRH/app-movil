@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <ion-header>
+        <ion-toolbar>
+          <ion-title>
+            VENTAS
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+  <ion-app>
+    <ion-header translucent>
+          </ion-header>
+    <ion-content fullscreen>
+      <form onsubmit="processForm(event)">
+        <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Address</ion-label>
+            <ion-input placeholder="Address Line 1"></ion-input>
+            <ion-input placeholder="Address Line 2"></ion-input>
+            <ion-input placeholder="City"></ion-input>
+            <ion-input placeholder="State"></ion-input>
+            <ion-input placeholder="Zip Code"></ion-input>
+          </ion-item>
+          <div class="ion-padding">
+              <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
+            </div>
+          <ion-item>
+            <ion-label position="stacked">Notes</ion-label>
+            <ion-textarea></ion-textarea>
+          </ion-item>
+        </ion-list>
+      </form>
+      <ion-item>
+        <ion-label position="fixed">nombre</ion-label>
+        <ion-input [(ngModel)]="newItem.nombre"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="fixed">Apellido</ion-label>
+        <ion-input [(ngModel)]="newItem.Apellido"></ion-input>
+      </ion-item>
+     
+      <ion-button expand="full" (click)="addItem()">AGREGAR COMPRA</ion-button>
+     
+      <ion-list #mylist>
+     
+        <ion-list-header>
+          <ion-label>MI LISTA</ion-label>
+        </ion-list-header>
+     
+        <ion-item-sliding *ngFor="let item of items">
+     
+          <ion-item>
+            <ion-label text-wrap>
+              <h3>{{ item.id }}</h3>
+              <ion-text color="secondary">
+                <p>{{ item.nombre }}</p>
+              </ion-text>
+              <p>{{ item.Apellido}}</p>
+            </ion-label>
+          </ion-item>
+     
+          <ion-item-options side="end">
+            <ion-item-option color="secondary" (click)="updateItem(item)">Update</ion-item-option>
+            <ion-item-option color="danger" (click)="deleteItem(item)">Delete</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+     
+      </ion-list>
+    </ion-content>
+  </ion-app>
+</html>
