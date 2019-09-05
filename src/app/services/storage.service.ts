@@ -7,8 +7,11 @@ export interface Item{
   password :String,
   nombre: String,
   Apellido: String,
-  Direccion: String,
-  Celular: String,
+  // compras
+  direccion: String,
+  celular: String,
+  monto: String,
+  empresa: String
 }
 const ITEMS_KEY='my-items';
 

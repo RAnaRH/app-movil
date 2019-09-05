@@ -13,7 +13,7 @@ export class Tab1Page {
  
   newItem: Item = <Item>{};
  
-  @ViewChild('mylistcompras', {static: false})mylist: IonList;
+  @ViewChild('mylist', {static: false})mylist: IonList;
  
   constructor(private storageService: StorageService, private plt: Platform, private toastController: ToastController) {
     this.plt.ready().then(() => {
@@ -41,8 +41,10 @@ export class Tab1Page {
  
   // UPDATE
   updateItem(item: Item) {
-    item.nombre = `UPDATED: ${item.nombre}`;
-    item.Apellido = `UPDATED: ${item.Apellido}`;
+    item.empresa = `${item.empresa}`;
+    item.direccion = `${item.direccion}`;
+    item.monto = `${item.monto}`;
+    item.celular = `  ${item.celular}`;
  
     this.storageService.updateItem(item).then(item => {
       this.showToast('Item updated!');

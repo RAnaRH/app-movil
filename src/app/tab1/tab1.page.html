@@ -36,13 +36,23 @@
         </ion-button>
       </ion-item>
       <ion-item>
-        <ion-label position="fixed">nombre</ion-label>
-        <ion-input [(ngModel)]="newItem.nombre"></ion-input>
+        <ion-label position="fixed">Empresa</ion-label>
+        <ion-input [(ngModel)]="newItem.empresa"></ion-input>
       </ion-item>
      
       <ion-item>
-        <ion-label position="fixed">Apellido</ion-label>
-        <ion-input [(ngModel)]="newItem.Apellido"></ion-input>
+        <ion-label position="fixed">Direccion</ion-label>
+        <ion-input [(ngModel)]="newItem.direccion"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="fixed">Monto</ion-label>
+        <ion-input [(ngModel)]="newItem.monto"></ion-input>
+      </ion-item>
+     
+      <ion-item>
+        <ion-label position="fixed">Celular</ion-label>
+        <ion-input [(ngModel)]="newItem.celular"></ion-input>
       </ion-item>
      
       <ion-button expand="full" (click)="addItem()">AGREGAR COMPRA</ion-button>
@@ -57,11 +67,12 @@
      
           <ion-item>
             <ion-label text-wrap>
-              <h3>{{ item.id }}</h3>
               <ion-text color="secondary">
-                <p>{{ item.nombre }}</p>
+                <p>{{ item.empresa }}</p>
               </ion-text>
-              <p>{{ item.Apellido}}</p>
+              <p>{{ item.direccion}}</p>
+              <p>{{ item.monto }}</p>
+              <p>{{ item.celular}}</p>
             </ion-label>
           </ion-item>
      

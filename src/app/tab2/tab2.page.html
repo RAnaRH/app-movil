@@ -7,37 +7,9 @@
           </ion-title>
         </ion-toolbar>
       </ion-header>
-  <ion-app>
-    <ion-header translucent>
-          </ion-header>
-    <ion-content fullscreen>
-      <form onsubmit="processForm(event)">
-        <ion-list lines="full" class="ion-no-margin ion-no-padding">
-          <ion-item>
-            <ion-label position="stacked">First Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required type="text" oninput="handleFirstNameValue(event)"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Last Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input required type="text" oninput="handleLastNameValue(event)"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="stacked">Address</ion-label>
-            <ion-input placeholder="Address Line 1"></ion-input>
-            <ion-input placeholder="Address Line 2"></ion-input>
-            <ion-input placeholder="City"></ion-input>
-            <ion-input placeholder="State"></ion-input>
-            <ion-input placeholder="Zip Code"></ion-input>
-          </ion-item>
-          <div class="ion-padding">
-              <ion-button expand="block" type="submit" class="ion-no-margin">Create account</ion-button>
-            </div>
-          <ion-item>
-            <ion-label position="stacked">Notes</ion-label>
-            <ion-textarea></ion-textarea>
-          </ion-item>
-        </ion-list>
-      </form>
+  
+ 
+    <ion-content>
       <ion-item>
         <ion-label position="fixed">nombre</ion-label>
         <ion-input [(ngModel)]="newItem.nombre"></ion-input>
@@ -53,7 +25,7 @@
       <ion-list #mylist>
      
         <ion-list-header>
-          <ion-label>MI LISTA</ion-label>
+          <ion-label>My Items</ion-label>
         </ion-list-header>
      
         <ion-item-sliding *ngFor="let item of items">
@@ -74,7 +46,6 @@
           </ion-item-options>
         </ion-item-sliding>
      
-      </ion-list>
-    </ion-content>
-  </ion-app>
-</html>
+      </ion-list>   
+
+</ion-content>
